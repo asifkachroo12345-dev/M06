@@ -1,0 +1,170 @@
+---
+title: "M06-Reflection Essay-Advanced Data Wrangling"
+author: "Asif Kachroo"
+date: '`r format(Sys.time())`'
+format: 
+  html: 
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    code-link: true
+    embed-resources: true
+    theme: cosmo
+    code-fold: true
+    code-tools: true
+    code-overflow: wrap
+    toc-expand: 2
+editor: visual
+execute: 
+  freeze: auto
+---
+
+# Introduction
+
+This reflection essay summarizes what I learned in Module 06 about advanced data wrangling, Tidyverse techniques, data cleaning, and Revealjs presentations. This module helped me understand that data wrangling is much deeper than just filtering rows or selecting columns. It includes reshaping, joining, cleaning in multiple stages, and preparing data so later analysis and visualization can actually make sense. In this essay, I reflect on the videos, lecture materials, and coding concepts introduced in this module.
+
+::: callout-note
+## Published Report Link
+
+**GitHub Pages / published report link:** [Paste your published report URL here](https://your-link-here.com)
+:::
+
+# What I Learned About Additional Tidyverse Tricks
+
+Compared with M05, this module introduced more advanced Tidyverse ideas and showed how different functions can be combined in a more fluent way. In M05, I learned the basic functions like `select()`, `filter()`, `mutate()`, `arrange()`, `group_by()`, and `summarize()`. Those were important because they taught me the core logic of wrangling. However, M06 went beyond the basics and showed how data scientists actually chain these ideas together when working on real problems.
+
+One thing I learned from the “Ten Tremendous Tricks in the Tidyverse” video is that Tidyverse is not just a toolbox of separate commands. It is a system that allows the user to think through a dataset in a structured way. I learned more about combining multiple operations smoothly, making code more readable, and letting each step build on the one before it. The tricks also showed me that there are faster and cleaner ways to solve problems than writing long repetitive code.
+
+Another thing that felt new in M06 was seeing how flexible the Tidyverse can be when handling different shapes of data. It was not just about basic cleaning anymore. It became more about strategy: how to move through a dataset, inspect it, reshape it, and produce insight. That made the module feel more realistic and closer to how data work happens in actual projects.
+
+# Reflection on David Robinson's Screencast Performance
+
+David Robinson’s impromptu screencast performance was very impressive because he seemed completely comfortable working with data live. He moved quickly, but his work still looked organized and logical. What stood out most to me was how naturally he connected wrangling and visualization. Instead of treating them as separate tasks, he used wrangling to guide the story he wanted to tell with the data.
+
+I could understand the general flow of what he was doing, but I definitely could not understand every detail in real time. Some parts moved too fast for me, especially when he layered many functions together or used shortcuts that come from a lot of experience. Still, even when I could not follow every single line immediately, I could understand the overall idea of exploring data, cleaning it, testing ideas, and building insight step by step.
+
+What I liked most about the screencast was that it showed what fluency looks like. It made me realize that becoming strong in data wrangling is not only about memorizing commands. It is about practicing enough that the tools begin to feel natural. Even though I am not at that level yet, the screencast gave me a better picture of what I am working toward.
+
+> Watching an expert work quickly helped me understand that data wrangling is both technical and creative. It requires logic, but it also requires curiosity.
+
+# Initial Cleaning vs. Further Cleaning
+
+## Initial Cleaning Process
+
+The initial cleaning video focused on preparing the dataset so it could be worked with more effectively. This stage of cleaning usually involves tasks such as fixing variable names, checking missing values, standardizing data types, removing obvious errors, and making the data easier to inspect. Initial cleaning is about creating order out of raw data. At this point, the goal is not necessarily to build the final analytical sample yet, but to make the dataset usable.
+
+This kind of cleaning is important because raw data often contains basic inconsistencies. If those are not fixed first, then later analysis can become confusing or misleading. Initial cleaning creates a foundation for everything that comes after.
+
+## Further Cleaning Process
+
+The further cleaning video went deeper into the dataset and applied more detailed decisions. Instead of only making the data tidy, this phase focused on analytical quality. This includes stricter filtering, removing cases that do not meet study criteria, checking for duplicates, refining variables, and narrowing the data to the exact sample needed for the project. This stage is more selective and purpose-driven.
+
+Further cleaning is different because it depends more on the specific goals of the analysis. At this point, the dataset is no longer just being made readable. It is being shaped into the final version that will actually be analyzed.
+
+## Major Differences Between the Two
+
+The biggest difference between initial cleaning and further cleaning is the level of depth and purpose. Initial cleaning fixes broad structural issues and creates a usable dataset. Further cleaning applies more specific rules based on the needs of the analysis. Because of that, further cleaning often removes more observations.
+
+That difference helps explain why final sample size changes. The initial cleaning keeps more cases because it is mainly addressing general messiness. Further cleaning becomes stricter and removes rows that do not fit the final research design or quality standards. As a result, the final sample size becomes smaller but also more valid for the intended analysis.
+
+# Reflection on Revealjs Presentation
+
+My impression of Revealjs is that it is a very strong presentation tool for people who want to combine writing, code, and presentation in one workflow. Unlike PowerPoint, which is based more on dragging and placing items manually, Revealjs is built through Quarto and markdown. That makes it especially useful for technical, academic, or portfolio-style presentations.
+
+From the webinar and sample materials, I learned that Revealjs presentations can include themes, slide transitions, footers, slide numbers, incremental bullet points, columns, speaker notes, scrollable slides, code blocks, citations, and custom CSS styling. I also learned that Revealjs works well for publishing to the web, which makes it more modern and convenient for sharing projects online.
+
+Its strengths compared with PowerPoint are reproducibility, web publishing, integration with R code, and clean formatting for analytical work. If I update the source file, I can regenerate the presentation easily. Its weakness is that it takes more time to learn, especially for users who are more comfortable with visual drag-and-drop tools. PowerPoint can feel easier at first, but Revealjs seems better for long-term technical presentations once the workflow is learned.
+
+# My Revealjs Presentation
+
+I created a Revealjs presentation and published it online.
+
+**Presentation link:** [Paste your Revealjs presentation URL here](https://your-presentation-link-here.com)
+
+My presentation is about my proposed website project. It presents the purpose of the site, the kinds of pages I want to include, and how the website can showcase my academic work, projects, and skills in a professional format. The presentation also explains how the website can function as a portfolio that supports future opportunities.
+
+From making the Revealjs presentation, I learned how to structure a visual story more intentionally. I also learned that even though Revealjs uses simple markdown syntax, design still matters. I had to think about pacing, slide flow, amount of text, and how to keep the presentation visually clear. Overall, it helped me understand how coding and communication can work together.
+
+# Three Advanced Wrangling Concepts from Step 6
+
+In Step 6, I learned several advanced wrangling concepts that were not covered in M05. Three especially important ones were relational joins, `across()`, and `case_when()`. These tools are useful because they help solve more realistic data problems that involve multiple variables, multiple tables, and conditional logic.
+
+## 1. `left_join()`
+
+I would use `left_join()` when I want to keep all rows from the main table and bring in matching information from another table. This is useful when my first table is the main dataset and I do not want to lose any of its observations.
+
+```{r}
+library(tidyverse)
+
+customers <- tibble(
+  customer_id = c(1, 2, 3),
+  name = c("Alice", "Bob", "Carlos")
+)
+
+orders <- tibble(
+  customer_id = c(1, 2),
+  order_total = c(50, 75)
+)
+```
+
+The output keeps all three customers, even though only two of them have matching order information. This is helpful when the main dataset should remain complete.
+
+## 2. `across()`
+
+I would use `across()` when I want to apply the same function to multiple columns at once. This saves time and makes the code cleaner.
+
+```{r}
+scores <- tibble(
+  student = c("A", "B", "C"),
+  math = c(80, 90, 85),
+  english = c(75, 88, 92)
+)
+
+scores %>%
+  summarize(across(where(is.numeric), mean))
+```
+
+The output shows the mean for each numeric column. This function is useful when a dataset has many columns and I need a consistent operation across all of them.
+
+## 3. `case_when()`
+
+I would use `case_when()` when I need to create categories based on conditions. It is useful for classification tasks and building cleaner logic than many nested `ifelse()` statements.
+
+```{r}
+grades <- tibble(
+  student = c("A", "B", "C", "D"),
+  score = c(92, 84, 76, 61)
+)
+
+grades %>%
+  mutate(letter_grade = case_when(
+    score >= 90 ~ "A",
+    score >= 80 ~ "B",
+    score >= 70 ~ "C",
+    TRUE ~ "D"
+  ))
+```
+
+The output creates a new variable called `letter_grade` based on the score ranges. This makes the dataset easier to interpret and analyze.
+
+::: callout-tip
+## Why these functions matter
+
+These three functions are useful because they reflect real data problems: combining tables, handling many variables efficiently, and creating meaningful categories from raw values.\
+:::
+
+# What I Liked Most About Data Wrangling in This Module
+
+What I liked most about working with data wrangling tools in this module is that they make messy information feel more manageable. At first, raw data can look overwhelming, but functions in dplyr and tidyr give a step-by-step way to organize it. I like that the syntax is readable and that the workflow feels logical once I understand the pieces. There is something satisfying about taking a messy dataset and gradually turning it into something clean and useful.
+
+I also like that wrangling feels practical. Visualization is exciting because it produces something people can see right away, but wrangling feels like the real foundation underneath the final result. The basement metaphor used in the prompt makes a lot of sense to me. Even though the work may not look glamorous, it is necessary. Without good wrangling, the later results are weak or misleading.
+
+# Challenges and How I Can Improve
+
+One challenge for me is that data wrangling can feel overwhelming when too many functions are introduced at once. I may understand each command separately, but when they are combined in long pipelines, it can become harder to see exactly what each step is doing. I also sometimes struggle to remember when one function is better than another, especially with more advanced tools.
+
+A good way for me to overcome this challenge is to practice more slowly and more consistently. The instructor’s advice about typing code, running it line by line, and revisiting advanced examples makes sense to me. I think that approach helps build understanding because it forces me to see what each line changes. Instead of trying to master everything immediately, it is probably better to focus on the basics, review often, and gradually build comfort with more advanced tools. Over time, I think that will make videos like David Robinson’s much easier to follow.
+
+# Conclusion
+
+Overall, Module 06 helped me understand that advanced data wrangling is not just a technical skill but a way of thinking carefully about data. I learned more advanced Tidyverse techniques, saw how professionals work through data problems, compared stages of cleaning, and practiced thinking about how code supports communication through Revealjs. This module made me appreciate the hidden work behind strong analysis, and it gave me a better sense of how I can continue improving through step-by-step practice.
